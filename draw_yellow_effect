@@ -7,7 +7,8 @@ repeat(50){
 
     var IMG=floor(random(10));
     var ANG=choose(0,90,180,270);
-        draw_sprite_ext(yellow_effect_spr,IMG,Xset,Yset,1,1,ANG,c_white,1)
+        if(random(100)<1)
+        draw_sprite_ext(yellow_effect_spr,IMG,view_xview[0]+Xset,view_yview[0]+Yset,1,1,ANG,c_white,1)
         
     Xset+=8
     
