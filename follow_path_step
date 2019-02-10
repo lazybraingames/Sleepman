@@ -1,0 +1,5 @@
+//FOR USE WITH follow_path_start
+
+path_add_point(MYpath,x,y,0)
+path_delete_point(MYpath,path_get_number(MYpath)-PATHlen)
+draw_path(MYpath,0,0,true)
