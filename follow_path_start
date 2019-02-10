@@ -1,0 +1,3 @@
+//USE IN CREATE, THEN USE follow_path_step IN STEP
+MYpath=path_add()
+path_set_closed(MYpath,false)
