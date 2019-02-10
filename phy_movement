@@ -1,0 +1,9 @@
+phy_position_x+=lengthdir_x(speed,direction)
+phy_position_y+=lengthdir_y(speed,direction)
+
+phy_rotation=-image_angle
+
+phy_linear_velocity_x=0
+phy_linear_velocity_y=0
+
+phy_linear_damping=100
