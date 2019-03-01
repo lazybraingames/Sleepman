@@ -1,0 +1,69 @@
+//the COL array must be created in the create event!!!
+//the FONT array must be created in the create event!!!
+
+//argument0= the original string - DONORstring
+//argument1= the spacing between letters - SPACING
+//argument2= v spacing - Vspace
+//argument3= max string width - MAXlen
+//argument4= x placement of string - PLACEx
+//argument5= y placement of string - PLACEy
+
+var DONORstring=argument0;
+
+var SPACING=argument1;
+
+var Vspace=argument2;
+
+var MAXlen=argument3;
+
+var PLACEx=argument4;
+
+var PLACEy=argument5;
+
+var LEN=string_length(DONORstring);
+
+var i=0;
+
+//populating the array which each letter from DONORstring
+
+repeat(LEN){
+    SLICE[i]=string_copy(DONORstring,i+1,1);
+    
+    i+=1
+}
+
+var ii=0;
+
+var Vticks=0;
+
+repeat(LEN){
+    
+    var Xslice=ii*SPACING-(MAXlen*Vticks);
+    
+    
+    if(Xslice>MAXlen){
+    PLACEy+=Vspace;
+    Vticks+=1
+    
+    Xslice=ii*SPACING-(MAXlen*Vticks);
+    
+    }
+    
+    if(Vticks>0)
+    Xslice-=SPACING
+    
+    
+    if(random(100)<1)
+    COL[ii]=random_color()
+    
+    if(random(100)<1)
+    FONT[ii]=toggle_font()
+    
+    draw_set_font(FONT[ii])
+    
+    draw_text_colour(PLACEx+Xslice,PLACEy,SLICE[ii],COL[ii],COL[ii],COL[ii],COL[ii],1)
+    
+    ii+=1
+    
+}
+    
